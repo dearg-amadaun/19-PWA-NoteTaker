@@ -30,6 +30,7 @@ module.exports = () => {
       new InjectManifest({
         swSrc: './src/src-sw.js',
         swDest: 'src-sw.js',
+        exclude: [/\.map$/, /asset-manifest\.json$/],
       }),
       new WebpackPwaManifest({
         name: 'Just Another Note Taker',
