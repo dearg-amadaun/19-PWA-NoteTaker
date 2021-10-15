@@ -62,12 +62,20 @@ module.exports = () => {
           loader: 'file-loader',
         },
         {
+          // test: /\.m?js$/,
+          // exclude: /(node_modules|bower_components)/,
+          // use: {
+          //   loader: 'babel-loader',
+          //   options: {
+          //     presets: ['@babel/preset-env']
           test: /\.m?js$/,
-          exclude: /(node_modules|bower_components)/,
+          exclude: /node_modules/,
+          // We use babel-loader in order to use ES6.
           use: {
             loader: 'babel-loader',
             options: {
-              presets: ['@babel/preset-env']
+              presets: ['@babel/preset-env'],
+              plugins: ['@babel/plugin-proposal-object-rest-spread', '@babel/transform-runtime'],
             },
           },
         },
