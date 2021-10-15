@@ -24,7 +24,7 @@ module.exports = () => {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        title: 'Cache',
+        title: 'J.A.T.E.',
         template: './index.html',
       }),
       new InjectManifest({
@@ -33,15 +33,20 @@ module.exports = () => {
         exclude: [/\.map$/, /asset-manifest\.json$/],
       }),
       new WebpackPwaManifest({
-        name: 'Just Another Note Taker',
-        short_name: 'jate',
+        fingerprints: false,
+        inject: true,
+        name: 'Just Another Text Editor',
+        short_name: 'J.A.T.E',
         description: 'A simple PWA text editor',
         background_color: '#ffffff',
-        crossorigin: 'use-credentials', //can be null, use-credentials or anonymous
+        start_url: '/',
+        publicPath: '/',
+        // crossorigin: 'use-credentials', //can be null, use-credentials or anonymous
         icons: [
           {
-            src: path.resolve('./client/src/images/logo.png'),
-            sizes: [96, 128, 192, 256, 384, 512] // multiple sizes
+            src: path.resolve('../src/images/logo.png'),
+            sizes: [96, 128, 192, 256, 384, 512], // multiple sizes
+            destination: path.join('assets', 'icons'),
           },
         ],
       }),
@@ -51,6 +56,10 @@ module.exports = () => {
         {
           test: /\.css$/,
           use: ['style-loader', 'css-loader'],
+        },
+        {
+          test: /\.(png|jpe?g|gif)$/i,
+          loader: 'file-loader',
         },
         {
           test: /\.m?js$/,
