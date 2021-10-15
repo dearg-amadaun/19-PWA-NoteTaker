@@ -24,7 +24,7 @@ module.exports = () => {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        title: 'Image Caching',
+        title: 'Cache',
         template: './index.html',
       }),
       new InjectManifest({
