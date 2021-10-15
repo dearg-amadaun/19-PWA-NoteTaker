@@ -1,7 +1,7 @@
 {
   "name": "jate",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple PWA text editor",
   "main": "server.js",
   "scripts": {
     "dev": "concurrently \"cd client && npm run dev\" \"cd server && npm run server\" ",
