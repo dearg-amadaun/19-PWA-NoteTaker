@@ -15,11 +15,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "concurrently": "^5.2.0",
     "express": "^4.17.1",
+    "html-webpack-plugin": "^5.3.2",
+    "idb": "^6.1.4",
     "if-env": "^1.0.4",
     "inject-web-manifest-plugin": "^1.0.6",
-    "concurrently": "^5.2.0",
-    "html-webpack-plugin": "^5.3.2",
     "nodemon": "^2.0.4",
     "npm-install-webpack-plugin": "^4.0.5",
     "webpack-pwa-manifest": "^4.3.0"
