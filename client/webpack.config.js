@@ -30,7 +30,7 @@ module.exports = () => {
       new InjectManifest({
         swSrc: './src/src-sw.js',
         swDest: 'src-sw.js',
-        // exclude: [/\.map$/, /asset-manifest\.json$/],
+        exclude: [/\.map$/, /asset-manifest\.json$/],
       }),
       new WebpackPwaManifest({
         fingerprints: false,
@@ -42,10 +42,10 @@ module.exports = () => {
         theme_color: '#225ca3',
         start_url: '/',
         publicPath: '/',
-        // crossorigin: 'use-credentials', //can be null, use-credentials or anonymous
+        crossorigin: 'use-credentials', //can be null, use-credentials or anonymous
         icons: [
           {
-            src: path.resolve('src/images/logo.png'),
+            src: path.resolve('./src/images/logo.png'),
             sizes: [96, 128, 192, 256, 384, 512], // multiple sizes
             destination: path.join('assets', 'icons'),
           },
