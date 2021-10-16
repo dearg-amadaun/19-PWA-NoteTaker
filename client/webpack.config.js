@@ -24,29 +24,30 @@ module.exports = () => {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        title: 'J.A.T.E.',
+        title: 'jate',
         template: './index.html',
       }),
       new InjectManifest({
         swSrc: './src/src-sw.js',
         swDest: 'src-sw.js',
-        exclude: [/\.map$/, /asset-manifest\.json$/],
+        // exclude: [/\.map$/, /asset-manifest\.json$/],
       }),
       new WebpackPwaManifest({
         fingerprints: false,
         inject: true,
-        name: 'Just Another Text Editor',
-        short_name: 'J.A.T.E',
-        description: 'A simple PWA text editor',
+        name: 'Just Another text editor',
+        short_name: 'jate',
+        description: 'A simple pwa text editor',
         background_color: '#ffffff',
+        theme_color: '#225ca3',
         start_url: '/',
         publicPath: '/',
         // crossorigin: 'use-credentials', //can be null, use-credentials or anonymous
         icons: [
           {
-            src: path.resolve('../src/images/logo.png'),
+            src: path.resolve('src/images/logo.png'),
             sizes: [96, 128, 192, 256, 384, 512], // multiple sizes
-            destination: path.join('path'),
+            destination: path.join('assets', 'icons'),
           },
         ],
       }),
@@ -57,10 +58,10 @@ module.exports = () => {
           test: /\.css$/,
           use: ['style-loader', 'css-loader'],
         },
-        {
-          test: /\.(png|jpe?g|gif)$/i,
-          loader: 'file-loader',
-        },
+        // {
+        //   test: /\.(png|jpe?g|gif)$/i,
+        //   loader: 'file-loader',
+        // },
         {
           // test: /\.m?js$/,
           // exclude: /(node_modules|bower_components)/,
