@@ -1,5 +1,5 @@
   # PWA Text Editor
-  ![redmegenerator](/assets/trackergrab.jpg)
+  ![notetaker](client/dist/assets/notetaker.jpg)
 
   ## Table of Contents
   * [License](#License)
